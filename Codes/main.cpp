@@ -1,16 +1,17 @@
-#include <QGuiApplication>
-#include <QQmlApplicationEngine>
+#include<QApplication>
+#include "board.h"
+#include "game_controller.h"
 
 int main(int argc, char *argv[])
 {
-    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
+    QApplication app (argc, argv);
 
-    QGuiApplication app(argc, argv);
 
-    QQmlApplicationEngine engine;
-    engine.load(QUrl(QStringLiteral("qrc:/main.qml")));
-    if (engine.rootObjects().isEmpty())
-        return -1;
+    GameController gctrlr;
+
+    gctrlr.resize(500,500);
+    gctrlr.setWindowTitle("Game of life");
+    gctrlr.show();
 
     return app.exec();
 }

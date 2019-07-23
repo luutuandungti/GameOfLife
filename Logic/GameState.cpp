@@ -102,7 +102,7 @@ class GameState {
         //Run this method to process to the next game state
         void nextstage() {            
             for (int i = 0; i < N ; i++){ 
-                for (int j = 0; i < N; j++) {
+                for (int j = 0; j < N; j++) {
                     State[i][j] = game_logic(number_of_neighbors(i,j,N,State), State[i][j]);           
                 }
             }
